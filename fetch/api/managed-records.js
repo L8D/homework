@@ -23,8 +23,8 @@ async function retrieve (options = {}) {
     console.log('Request failed', error)
   }
 
-  const pageResults = body.slice(0, 10)
-  const nextPageResults = body.slice(10)
+  const pageResults = body.slice(0, pageSize)
+  const nextPageResults = body.slice(pageSize)
 
   const ids = pageResults.map(({id}) => id)
 
