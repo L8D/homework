@@ -14,11 +14,10 @@ async function retrieve (options = {}) {
 
   const url = constructRequestURL(page, colors)
 
-  const response = await fetch(url)
-
   let body = []
 
   try {
+    let response = await fetch(url)
     body = await response.json()
   } catch (error) {
     console.log('Request failed', error)
